@@ -2,7 +2,7 @@
   
   :description "Online presence"
   
-  :url "http://example.com/FIXME"
+  :url "https://github.com/kordano/lambdaforge"
   
   :license {:name "Eclipse Public License"
             :url "http://www.eclipse.org/legal/epl-v10.html"}

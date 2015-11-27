@@ -21,7 +21,8 @@
         logfmt (node/require "logfmt")
         server (.createServer (node/require "http") app)
         io ((node/require "socket.io") server)]
-    (.use app (.static express (str __dirname "dist/client")))
+    (.use app "/static" (.static express (str __dirname)))
+    (.use app (.requestLogger logfmt)) ;; append-only file in future
     (.get app "/" (fn [req res] (.send res "Welcome to Lambdaforge!")))
     (.on io "connection" socket-handler)
     (.listen server 8099)))
